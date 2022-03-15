@@ -14,7 +14,7 @@ const { get, post } = useFetch;
 export const Add = createAsyncThunk(
   "addPage/add",
   async (body) => {
-    let res = await post(body[0], body[1]);
+    let res = await post(body[1], body[0]);
     return await res.json();
   }
 );

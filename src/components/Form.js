@@ -1,11 +1,12 @@
 import { Add } from "pages/AddPage/AddPageSlice";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { MySelect } from "./MySelect";
 
 
 
 
-export const Form = ({ data, endPoint }) => {
+export const Form = ({ data, endPoint, selectOption }) => {
 
     let dispatch = useDispatch()
     const handleSubmit = (e) => {
@@ -14,7 +15,6 @@ export const Form = ({ data, endPoint }) => {
         Array.from(e.target).map(({ name, value }) => value != '' && (obj = { ...obj, ...{ [name]: value } })).filter(e => e)
         let data = [obj, endPoint]
         dispatch(Add(data))
-
     }
 
     return (
@@ -31,6 +31,12 @@ export const Form = ({ data, endPoint }) => {
                             </div>
                         )
                     })}
+                    {selectOption && selectOption.map(e => {
+                        return (
+                            <MySelect  key={e} options={e} />
+                        )
+                    })}
+
 
                     <div className="flex items-center justify-between">
                         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >

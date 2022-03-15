@@ -5,6 +5,8 @@
   "homepage": "https://demos.creative-tim.com/material-tailwind-dashboard-react/#/",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/runtime": "^7.17.2",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@headlessui/react": "^1.5.0",
@@ -19,6 +21,8 @@
     "axios": "^0.26.1",
     "chart.js": "2.9.4",
     "daisyui": "^1.24.3",
+    "import-local": "^3.1.0",
+    "jest-dom": "^4.0.0",
     "react": "^17.0.2",
     "react-date-range": "^1.4.0",
     "react-dom": "^17.0.2",
@@ -35,10 +39,10 @@
     "start:react": "react-scripts start",
     "start": "npm-run-all -p watch:tailwind start:react",
     "build": "npm run build:tailwind && react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "npm:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "yarn:clean": "rm -rf node_modules/ && rm -rf package-lock.json && yarn install && yarn start"
+    "yarn:clean": "rm -rf node_modules/ && rm -rf package-lock.json && yarn install && yarn start",
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!@toolz/allow)/\" --env=jsdom"
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +67,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
+    "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.1.4"
   },
   "optionalDependencies": {

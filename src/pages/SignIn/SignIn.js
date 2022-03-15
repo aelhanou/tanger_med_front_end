@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 import { getUser } from "pages/Dashboard/DashboardSlice";
+import { testLogin } from "test";
 
 export const SignIn = () => {
   const navigate = useNavigate();
@@ -20,6 +21,10 @@ export const SignIn = () => {
       return navigate("/")
     }
   }, [])
+
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -32,6 +37,8 @@ export const SignIn = () => {
 
       toast.success("Registration Successful . pls login ");
       setLoading(false);
+
+
       let { _id, token } = data
       localStorage.setItem("token", token)
       localStorage.setItem("id", _id)

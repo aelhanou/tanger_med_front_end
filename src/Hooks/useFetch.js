@@ -6,7 +6,8 @@ export const useFetch = {
             credentials: "include",
             headers: {
                 "accept": "application/json",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
                 // "Authorization": `Bearer ${token}`
             },
         });
@@ -14,12 +15,15 @@ export const useFetch = {
     },
 
     async post(EndPoint, body) {
+
         let url = `${process.env.REACT_APP_BACKEND_URL}/${EndPoint}`
         return await fetch(url, {
             method: "POST",
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+
                 // "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(body)

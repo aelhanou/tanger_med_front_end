@@ -7,7 +7,6 @@ import Icon from '@material-tailwind/react/Icon';
 import LeadText from '@material-tailwind/react/LeadText';
 import Button from '@material-tailwind/react/Button';
 import { SyncOutlined } from '@ant-design/icons';
-import { useEffect, useState } from 'react';
 
 export default function ProfileCard({ email, lastname, firstName }) {
 

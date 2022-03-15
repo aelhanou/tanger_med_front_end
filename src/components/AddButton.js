@@ -6,10 +6,8 @@ const { Button } = require("@material-tailwind/react")
 
 
 
-export const AddButton = ({ name, data, endPoint }) => {
+export const AddButton = ({ name, data, endPoint,selectOption }) => {
     const [showModal, setShowModal] = useState(false);
-
-
     return (
         <>
             <div className="flex justify-center items-center w-[200px] h-24  rounded-xl bg-white ">
@@ -18,7 +16,7 @@ export const AddButton = ({ name, data, endPoint }) => {
                     className="w-[140px] h-16">{name}</Button>
             </div>
             <MyModal setShowModal={setShowModal} showModal={showModal} title={name} >
-                <Form data={data} endPoint={endPoint} />
+                <Form data={data} endPoint={endPoint} selectOption={selectOption} />
             </MyModal>
         </>
     )
